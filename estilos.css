@@ -1,93 +1,97 @@
+ /* Estilos CSS para dar formato a la página */
+ body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(ellipse at center,
+          rgba(0, 0, 0, 0.8) 0%,
+          rgba(0, 0, 0, 0.9) 25%,
+          rgb(0, 0, 0) 50%),
+      radial-gradient(circle at top left,
+          rgba(255, 255, 255, 0.329) 5%,
+          transparent 20%),
+      radial-gradient(circle at top right,
+          rgba(6, 238, 37, 0.699) 5%,
+          transparent 20%),
+      radial-gradient(circle at bottom left,
+          rgba(255, 255, 255, 0.212) 5%,
+          transparent 20%),
+      radial-gradient(circle at bottom right,
+          rgba(2, 187, 147, 0.486) 5%,
+          transparent 20%);
+  background-color: #002708;
+  background-size: 100% 100%, 40px 40px, 40px 40px, 40px 40px, 40px 40px;
+}
 
-* {
-  box-sizing: border-box;
-}
-.main-container {
-  max-width: 800px;
-  margin: auto;
-}
-h1.titulo {
-  margin: 50px auto 80px auto;
-  text-align: center;
-  font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-}
-h1#msg-final {
-  text-align: center;
-  color: crimson;
-  transition: all .5s ease;
-  transform: scale(0);
-  min-height: 50px;
-  margin-bottom: 0;
+h1 {
+  color: #333;
+  font-size: 32px;
+  margin-top: 20px;
 }
 
-#acierto {
-  text-align: center;
-  min-height: 24px;
-  transform: scale(0);
-}
-.acierto {
-  animation: zoomInOut 1s ease;
-}
-.rojo {
-  color: red;
-}
-.verde {
-  color: green;
-}
-@keyframes zoomInOut {
-  0% { transform: scale(0); }
-  50% { transform: scale(1); }
-  70% { transform: scale(1); }
-  100% { transform: scale(0); }
-}
-h2.palabra {
-  margin: 0 auto 25px auto;
-  text-align: center;
-  color: royalblue;
-  text-transform: uppercase;
-  letter-spacing: 6px;
-}
-.flex-row {
+/* Estilos para el contenedor principal */
+#container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  margin: 10px auto; 
-}
-.no-wrap {
-  flex-wrap: nowrap !important;
-}
-.col {
-  width: 50%;
-  text-align: center;
-}
-.col span {
-  
-}
-#turnos h3 {
-  margin: auto;
-}
-h3 span {
-   color: orangered;
-}
-.letra:disabled {
-  color:rgba(255, 0, 0, 0.5);
-}
-picture {
-  position: relative;
-}
-picture img {
-  position: absolute;
-  top: -203px;
-  left: -205px;
-  height: 225px;
+  height: 100vh;
 }
 
-.fade-in {
-  opacity: 1 !important;
-}
-.encuadre {
-  border: 2px dashed crimson;
-  padding: 3px 2px 2px 6px;
+/* Estilos para el área de dibujo del ahorcado */
+#canvas {
+  background-color: #ff65655b;
+  border: 4px solid #22382e;
+  display: block;
+  margin-bottom: 20px;
 }
 
+/* Estilos para mostrar la palabra a adivinar */
+#wordDisplay {
+  font-size: 24px;
+  color: #333;
+}
 
+/* Estilos para los botones de letras */
+#letterButtonsContainer {
+  margin-top: 20px;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(9, 1fr);
+  gap: 5px;
+}
+
+/* Estilos para mostrar las letras adivinadas y las oportunidades restantes */
+#guessesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 2px solid #333333;
+  padding: 10px;
+}
+
+#guessesDisplay {
+  font-size: 18px;
+  color: #003744;
+  margin-top: 10px;
+}
+
+/* Estilos para los botones de letras */
+button {
+  margin: 5px;
+  padding: 12px 20px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background-color: #223833;
+  border-radius: 8px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #555;
+}
